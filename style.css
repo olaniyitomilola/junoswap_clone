@@ -1,0 +1,212 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Inria Sans', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    color: rgba(25, 29, 32, 0.95);
+
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    padding: 1em;
+}
+.menu-panel{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0.8em;
+    border-right: 1px solid rgba(25, 29, 32, 0.1);
+
+}
+#logo_and_text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#logo_and_text img{
+    width: 25px;
+    height: 25px;
+    margin-right: 1em;
+}
+#logotext_top{
+    color: rgba(199, 62, 89, 0.9);
+}
+#logotext_bottom{
+    font-size: 1.8em;
+    color: black;
+}
+#menu-part{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2em;
+
+}
+#connector{
+    padding: 1em;
+    background-color: black;
+    color: #ffffff;
+    font-weight: normal;
+    cursor: pointer;
+    border-radius: 0.2em;
+    outline: none;
+    border: none;
+}
+#menu_nav{
+    margin-top: 3em;
+}
+#navlink{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7em;
+    cursor: pointer;
+    font-size: large;
+    width: 100%;
+    margin-bottom: 00.2em;
+
+}
+#navlink img{
+    width: 18px;
+    height: 18px;
+}
+#navlink:hover, #lightcontrol:hover, .active,.feedgov:hover,#socialitem:hover{
+    background-color: rgba(25, 29, 32, 0.1);
+    border-radius: 0.3em;
+
+}
+#nav_logo{
+    display: flex;
+    flex: 0.5;
+}
+#nav_text{
+    padding-left: 0.5em;
+    flex: 3;
+}
+#foot-part{
+    margin-top: 3em;
+}
+#lightcontrol{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 0.7em ;
+    padding-bottom: 0.7em;
+    padding-left: 0.3em;
+    padding-right:0.3em;
+    margin-top: 0.7em;
+    cursor: pointer;
+}
+#siteversion{
+    font-family: monospace;
+    color: rgba(25, 29, 32, 0.5);
+}
+#controltext{
+    display: flex;
+    flex-direction: row;
+}
+#controltext img{
+  
+    width: 15px;
+    height: 15px;
+    margin-right: 1em;
+}
+#lightswitch{
+    width: 24px;
+    height: 20px;
+}
+#hr_line{
+    margin-top: 1.5em;
+    border:0.5px solid rgba(25, 29, 32, 0.2);
+    margin-bottom: 2em;
+
+}
+#foot-part a{
+    text-decoration: none;
+    color: rgba(25, 29, 32, 0.95);
+
+}
+.feedgov{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+    align-items: center;
+    padding: 0.5em;
+}
+#feedgov_left{
+    display: flex;
+    flex-direction: row;
+}
+#feedgov_text{
+    margin-left: 1em;
+}
+#arrow45{
+    width: 15px;
+    height: 15px;
+}
+#socials{
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+}
+#socialitem{
+    padding: 0.5em;
+    margin-right: 1em;
+}
+#socialitem img{
+    padding: 0.2em;
+    background-color: rgba(25, 29, 32, 0.5);
+    border-radius: 50%;
+}
+
+
+.operations-panel{
+    flex: 2.5;
+}
+.footpanel{
+    flex: 1;
+    padding: 1.2em;
+    border-left: 1px solid rgba(25, 29, 32, 0.1);
+}
+.footpanel a{
+    text-decoration: none;
+    color: rgba(25, 29, 32, 0.95);
+}
+#betanote{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+
+}
+#betanote img{
+    width: 18px;
+    height: 18px;
+    margin-right: 1.5em;
+}
+#otherbetanote{
+    margin-top: 2em;
+    font-size: 1em;
+}
+#report{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5em;
+    align-items: center;
+    background-color: rgba(25, 29, 32, 0.1);
+    border-radius: 0.2em;
+}
+
+
