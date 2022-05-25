@@ -6,6 +6,7 @@ body{
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: row;
     padding: 0;
     margin: 0;
     color: rgba(25, 29, 32, 0.95);
@@ -15,11 +16,9 @@ body{
     display: flex;
     flex-direction: row;
     flex: 1;
-    padding: 1em;
 }
 .menu-panel{
-    display: flex;
-    flex-direction: column;
+  
     flex: 1;
     padding: 0.8em;
     border-right: 1px solid rgba(25, 29, 32, 0.1);
@@ -39,7 +38,7 @@ body{
     color: rgba(199, 62, 89, 0.9);
 }
 #logotext_bottom{
-    font-size: 1.8em;
+    font-size: 1.2em;
     color: black;
 }
 #menu-part{
@@ -69,7 +68,7 @@ body{
     justify-content: center;
     padding: 0.7em;
     cursor: pointer;
-    font-size: large;
+    font-size: 1em;
     width: 100%;
     margin-bottom: 00.2em;
 
@@ -140,7 +139,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.1em;
     align-items: center;
     padding: 0.5em;
 }
@@ -158,7 +157,7 @@ body{
 #socials{
     display: flex;
     flex: 1;
-    align-items: flex-end;
+    align-items: center;
 }
 #socialitem{
     padding: 0.5em;
@@ -172,8 +171,138 @@ body{
 
 
 .operations-panel{
-    flex: 2.5;
+    flex: 3.2;
+    padding: 2em 1em 1em 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
+#swapheader{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#swap_p{
+    margin-top: 1em;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+#swap_box{
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#firstcoin,#coinexchange,#secondcoin,#swapcoin{
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E8E8E8;
+}
+#firstcoin{
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom: solid 0.5px grey ;
+    cursor: pointer;
+}
+#secondcoin{
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-top: solid 0.5px grey ;
+    cursor: pointer;
+}
+#coinselect{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5em;
+    justify-content: space-between;
+}
+#coininfo_img{
+    display: flex;
+    align-items: center;
+    border: solid 1px grey;
+    border-radius: 50%;
+    padding: 0.05em;
+    height: 2em;
+    width: 2em;
+}
+#coinselect img{
+    width: 18px;
+    height: 18px;
+}
+#coinselect:hover{
+    background-color: rgba(25, 29, 32, 0.1);
+    border-radius: 0.5em;
+
+}
+#firstcoin:hover{
+    background-color: rgba(25, 29, 32, 0.3);
+
+
+}
+#coininfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#nameandbalance{
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+#coinname{
+    font-size: 1.4em;
+    color: rgba(25, 29, 32, 0.7);
+
+}
+#swapvalue{
+    flex: 2;
+    padding: 1em;
+
+}
+#swapvalue input{
+
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-size: 1.4em;
+    float: right;
+    text-align: end;
+
+}
+#exchangeicon{
+    padding: 0.5em;
+}
+#exchangeicon img{
+    width: 1em;
+    height: 1em;
+    display: flex;
+    align-items: center;
+    padding: 0.05em;
+    cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+#coinbalance{
+    font-size: 1em;
+}
+
 .footpanel{
     flex: 1;
     padding: 1.2em;
@@ -208,5 +337,66 @@ body{
     background-color: rgba(25, 29, 32, 0.1);
     border-radius: 0.2em;
 }
+#dropdownMenu{
+    display: none;
+}
 
+@media screen and (max-width:1025px) {
+     .footpanel{
+         display: none;
+     }
+
+}
+@media screen and (max-width:415px) {
+    body{
+        margin: auto;
+        width: 100vw;
+        height: 100vh;
+        font-size: 10px;
+    }
+    .menu-panel{
+        flex: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+    }
+    #menu-part,#foot-part{
+        display: none;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1em;
+    }
+   
+    .operations-panel{
+        padding: 0.5em;
+    }
+    #dropdownMenu{
+        display: flex;
+        flex-direction: row;
+        padding: 0.5em;
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        justify-content: space-around;
+        align-items: center;
+        width: 6em;
+        height: 2.5em;
+        font-size: 0.8em;
+        border: none;
+        border-radius: 0.5em;
+        cursor: pointer;
+    }
+    #dropdownMenu img{
+        width: 1em;
+        height: 1em;
+    }
+    
+    
+}
 
