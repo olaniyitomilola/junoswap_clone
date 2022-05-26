@@ -22,6 +22,7 @@ body{
     flex: 1;
     padding: 0.8em;
     border-right: 1px solid rgba(25, 29, 32, 0.1);
+    overflow: hidden;
 
 }
 #logo_and_text{
@@ -176,7 +177,13 @@ body{
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }
+.operations-panel::-webkit-scrollbar {
+    display: none; /* This will hide all the scrollbars on this section */
+  }
+  
+  
 #swapheader{
     font-size: 1.2em;
     font-weight: bold;
@@ -350,6 +357,83 @@ body{
     color: white;
 
 }
+#transferblock{
+    color: black;
+    padding-left: 1em;
+    padding-right: 1em;
+
+
+}
+#transfertextheader{
+    color: black;
+    font-size: x-large;
+}
+#transfertextpara{
+    margin-top: 2em;
+
+}
+#userassets{
+    margin-top: 2.5em;
+}
+#theassets{
+    margin-top: 1em;
+}
+#othertokenheader{
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+}
+#thecoins{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    margin-top: 0.5em;
+    background-color: rgba(25, 29, 32, 0.1);
+    border-radius: 0.5em;
+}
+#assetinformation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#depositlink{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: grey;
+    cursor: pointer;
+    padding: 0.4em;
+
+}
+#depositlink:hover{
+    background-color: rgba(25, 29, 32, 0.1);
+    border-radius: 0.2em;
+}
+#depositlink img{
+    height: 1em;
+    width: 1em;
+    margin-left: 1em;
+}
+#assetlogo{
+    height: 2em;
+    width: 2em;
+}
+#assetname{
+    margin-left: 1em;
+    font-size: 1.2em;
+}
+#assetfooter{
+    color: rgba(25, 29, 32, 0.1);
+    font-size: 1em;
+    padding: 2em 0em;
+    border-bottom: solid 1px grgba(25, 29, 32, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    
 
 
 
@@ -372,6 +456,7 @@ input[type=number] {
     flex: 1;
     padding: 1.2em;
     border-left: 1px solid rgba(25, 29, 32, 0.1);
+    overflow: hidden;
 }
 .footpanel a{
     text-decoration: none;
@@ -423,14 +508,18 @@ input[type=number] {
         flex-direction: column;
     }
     #slipandfee{
-        flex: 100%;
         display: flex;
         flex-direction: column;
+        width: 100%;
+        flex: 100%;
     }
     #swapbtn, #slippage,#slipperce{
         flex: 100%;
+        margin-left: 0px;
+        border: none;
+        border-radius: 0.5em;
     }
-        
+  
 
 }
 @media screen and (max-width:415px) {

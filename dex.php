@@ -13,11 +13,11 @@
         <div id="menu-part">
             <button id="connector">Connect Keplr</button>
             <div id="menu_nav">
-                <div id="navlink" class="active">
+                <div id="navlink">
                     <div id= "nav_logo"><img src="includes/resources/img/hashtag.png"></div>
                     <div id="nav_text">Swap</div>
                 </div>
-                <div id="navlink">
+                <div id="navlink" class="active">
                     <div id= "nav_logo"><img src="includes/resources/img/up-arrow.png"></div>
                     <div id="nav_text">Transfer</div>
                 </div>
@@ -71,7 +71,7 @@
     </div>
     <div class="operations-panel">
        <?php
-       $directory = 'swap.php';
+       $directory = 'transfer.php';
        include $directory;
        ?>
     </div>
