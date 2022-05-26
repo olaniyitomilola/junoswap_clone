@@ -39,22 +39,34 @@
         </div>
     </div>
     <div id="secondcoin">
-        <div id="tokenselect">
+        <div id="selectcoin">
+            <div id="coininfo">
+                <div>Select a Token</div>
+            </div>
+            <img src="includes/resources/img/down-arrow.png" alt="">
 
         </div>
-        <div id="swappedvalue">
-            <div id="slippage">
-
-            </div>
-            <div id="swapfee">
-
-            </div>
-            <div id="swapbtn">
-
-            </div>
+        <div id="coinvalue">
+            0
         </div>
 
     </div>
-    <div id="swapcoin"></div>
+    <div id="swapcoin">
+        <div id="slipandfee">
+            <div id="slippage">
+                <div id="slipperce">
+                    SLIPPAGE 1%
+                </div>
+                <img src="includes/resources/img/down-arrow.png" alt="">
+            </div>
+            <div id="swapfee">
+                SWAP FEE(0.3%)
+            </div>
+        </div>
+
+        <div id="swapbtn">
+            Swap
+        </div>
+    </div>
 
 </form>

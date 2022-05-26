@@ -192,7 +192,7 @@ body{
     flex-direction: column;
     width: 100%;
 }
-#firstcoin,#coinexchange,#secondcoin,#swapcoin{
+#firstcoin,#coinexchange,#secondcoin{
     display: flex;
     flex-direction: row;
     padding: 0.5em;
@@ -205,21 +205,35 @@ body{
     border-top-right-radius: 0.5em;
     border-bottom: solid 0.5px grey ;
     cursor: pointer;
+    flex-wrap: wrap;
+    padding: 0.5em;
 }
 #secondcoin{
     border-bottom-left-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
     border-top: solid 0.5px grey ;
     cursor: pointer;
+    flex-wrap: wrap;
+    padding: 0.5em;
 }
-#coinselect{
-    flex: 1;
+#swapcoin{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+    color: rgba(25, 29, 32, 0.5);
+    font-size: 0.8em;
+
+}
+#coinselect,#selectcoin{
+    flex: 20%;
     display: flex;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
-    padding: 0.5em;
+    height: 4em;
+    padding: 0.3em;
     justify-content: space-between;
 }
 #coininfo_img{
@@ -231,11 +245,11 @@ body{
     height: 2em;
     width: 2em;
 }
-#coinselect img{
+#coinselect img, #selectcoin img, #slippage img{
     width: 18px;
     height: 18px;
 }
-#coinselect:hover{
+#coinselect:hover, #selectcoin:hover{
     background-color: rgba(25, 29, 32, 0.1);
     border-radius: 0.5em;
 
@@ -262,9 +276,16 @@ body{
 
 }
 #swapvalue{
-    flex: 2;
+    flex: 80%;
     padding: 1em;
 
+}
+#coinvalue{
+    flex: 80%;
+    padding: 1em;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.4em;
 }
 #swapvalue input{
 
@@ -287,6 +308,50 @@ body{
     padding: 0.05em;
     cursor: pointer;
 }
+#slipandfee{
+    flex: 4;
+    display: flex;
+    flex-direction: row;
+}
+#swapfee{
+    margin-top: 0.7em;
+    flex: 3;
+    width: 100%;
+    background-color: #E8E8E8;
+    padding: 1em;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+#slippage{
+    margin-top: 0.7em;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 1;
+    background-color: #E8E8E8;
+    padding: 1em;
+    border-right: solid 1px gray;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+
+}
+
+#swapbtn{
+    flex: 1;
+    margin-top: 0.7em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    background-color: rgba(25, 29, 32, 0.5);
+    margin-left: 1em;
+    border-radius: 0.5em;
+    color: white;
+
+}
+
+
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -345,6 +410,27 @@ input[type=number] {
      .footpanel{
          display: none;
      }
+     #coinselect,#selectcoin{
+        flex: 100%;
+
+    }
+    #coinselect,#selectcoin{
+        flex: 100%;
+   
+    }
+    #swapcoin{
+        display: flex;
+        flex-direction: column;
+    }
+    #slipandfee{
+        flex: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    #swapbtn, #slippage,#slipperce{
+        flex: 100%;
+    }
+        
 
 }
 @media screen and (max-width:415px) {
@@ -396,6 +482,7 @@ input[type=number] {
         width: 1em;
         height: 1em;
     }
+
     
     
 }
