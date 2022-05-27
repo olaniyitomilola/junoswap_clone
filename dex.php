@@ -71,7 +71,7 @@
     </div>
     <div class="operations-panel">
        <?php
-       $directory = 'transfer.php';
+       $directory = 'liquidity.php';
        include $directory;
        ?>
     </div>
