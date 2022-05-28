@@ -17,13 +17,27 @@ body{
     flex-direction: row;
     flex: 1;
 }
+/*had quite some issues with letting the menu panel and
+foot panel have relatively fixed width while reducing screen size
+Initially, I just set the flex of both to 1, but what I need to do is give them a fixed
+width using flex-basis and have 0 shrink or a zero pointer, for very small shrink rate*/
 .menu-panel{
   
-    flex: 1;
+    flex: 0 0.2 18em;
     padding: 0.8em;
     border-right: 1px solid rgba(25, 29, 32, 0.1);
     overflow: hidden;
 
+}
+.footpanel{
+    flex: 0 0.2 18em;
+    padding: 0.8em;
+    border-left: 1px solid rgba(25, 29, 32, 0.1);
+    overflow: hidden;
+}
+.footpanel a{
+    text-decoration: none;
+    color: rgba(25, 29, 32, 0.95);
 }
 #logo_and_text{
     display: flex;
@@ -445,7 +459,7 @@ body{
     
 }
 #liquiditybond{
-    min-width: 20em;
+
     width: 49%;
     background-color: rgba(25, 29, 32, 0.1);
     margin-top: 0.5em;
@@ -455,13 +469,16 @@ body{
     border-radius: 0.5em;
 
 }
+#liquiditybond:hover{
+    background-color: rgba(25, 29, 32, 0.2);
+}
 #liquiditybondtop{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 3em 4em;
-    border-bottom: solid 1px rgba(25, 29, 32, 0.3);
+    border-bottom: solid 1px rgba(25, 29, 32, 0.1);
 }
 #liquiditybondbottom{
     color: rgba(25, 29, 32, 0.7);
@@ -522,16 +539,7 @@ input[type=number] {
     font-size: 1em;
 }
 
-.footpanel{
-    flex: 1;
-    padding: 1.2em;
-    border-left: 1px solid rgba(25, 29, 32, 0.1);
-    overflow: hidden;
-}
-.footpanel a{
-    text-decoration: none;
-    color: rgba(25, 29, 32, 0.95);
-}
+
 #betanote{
     display: flex;
     flex-direction: row;
@@ -561,7 +569,7 @@ input[type=number] {
     display: none;
 }
 
-@media screen and (max-width:1025px) {
+@media screen and (max-width:1050px) {
      .footpanel{
          display: none;
      }
@@ -589,6 +597,9 @@ input[type=number] {
         border: none;
         border-radius: 0.5em;
     }
+    #liquiditybond{
+        width: 100%;}
+
   
 
 }
