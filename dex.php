@@ -69,9 +69,9 @@
             <img src="includes/resources/img/down-arrow.png" alt="">
         </button>
     </div>
-    <div class="operations-panel">
+    <div class="operations-panel" id = "testing">
        <?php
-       $directory = 'liquidity.php';
+       $directory = 'swap.php';
        include $directory;
        ?>
     </div>

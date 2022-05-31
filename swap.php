@@ -28,7 +28,7 @@
     </div>
     <div id="coinexchange">
         <div id="exchangeicon">
-            <img src="includes/resources/img/up-down.png" alt="">
+            <img id = "tradeswap" src="includes/resources/img/up-down.png" alt="">
         </div>
         <div id= "coinconversion">
 
