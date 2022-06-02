@@ -13,11 +13,11 @@
         <div id="menu-part">
             <button id="connector">Connect Keplr</button>
             <div id="menu_nav">
-                <div id="navlink">
+                <div id="navlink" class="active">
                     <div id= "nav_logo"><img src="includes/resources/img/hashtag.png"></div>
                     <div id="nav_text">Swap</div>
                 </div>
-                <div id="navlink" class="active">
+                <div id="navlink">
                     <div id= "nav_logo"><img src="includes/resources/img/up-arrow.png"></div>
                     <div id="nav_text">Transfer</div>
                 </div>
@@ -32,7 +32,7 @@
             <div id="lightcontrol">
                 <div id="controltext">
                     <img src="includes/resources/img/switch.png" alt="">
-                    <div>Dark mode</div>
+                    <div id = 'toggletext'>Light mode</div>
                 </div>
                 <img id="lightswitch"src="includes/resources/img/light.png" alt="">
             </div>
@@ -69,11 +69,23 @@
             <img src="includes/resources/img/down-arrow.png" alt="">
         </button>
     </div>
-    <div class="operations-panel" id = "testing">
-       <?php
-       $directory = 'swap.php';
-       include $directory;
-       ?>
+    <div class="operations-panel">
+        <div id = "opanel" >
+            <?php
+            include 'swap.php';
+            ?>
+        </div>
+        <div id = "opanel" class = "hidepanel">
+            <?php
+            include 'transfer.php';
+            ?>
+        </div>
+        <div id = "opanel" class = "hidepanel">
+            <?php
+            include 'liquidity.php';
+            ?>
+        </div>
+    
     </div>
     <div class="footpanel">
         <div id="betanote">

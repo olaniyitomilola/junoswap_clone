@@ -21,6 +21,7 @@
                         <div>JUNO</div>
                         <div id="thedot"><img src="includes/resources/img/dot.png" alt=""></div>
                         <div><?php echo $coin[$i]['name'] ?></div>
+
                     </div>
 
                 </div>
