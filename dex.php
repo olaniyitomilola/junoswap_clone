@@ -64,10 +64,16 @@
                 </a>
             </div>
         </div>
-        <button id="dropdownMenu">
-            <div>Menu</div>
-            <img src="includes/resources/img/down-arrow.png" alt="">
-        </button>
+        <div id = "dropdownMenu">
+            <button>
+                <div>Menu</div>
+                <img src="includes/resources/img/down-arrow.png" alt="">
+            </button>
+            <div>X</div>
+            
+        </div>
+        
+
     </div>
     <div class="operations-panel">
         <div id = "opanel" >

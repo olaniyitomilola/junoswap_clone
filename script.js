@@ -2,6 +2,9 @@ var x = document.getElementById("connector");
 var coinchange = document.getElementById("tradeswap");
 coinchange.addEventListener("click", coinSwap);
 var mode = document.getElementById
+var title = document.querySelector('title');
+
+title.textContent = 'JunoSwap | Swap';
 
 //swap the elements in the first coin to the second
 var firstCoin = document.getElementById('firstcoin').innerHTML;
@@ -14,7 +17,6 @@ function coinSwap (){
     var source = coinchange.getAttribute('src');
     var temp = null;
         
-    console.log(source);
      if(source == 'includes/resources/img/up-down.png'){
         coinchange.src = 'includes/resources/img/down-up.png';
         temp = firstCoin;
@@ -35,8 +37,6 @@ function coinSwap (){
 var toggleimage = document.getElementById('lightswitch');
 var toggletext = document.getElementById('toggletext');
 var controller = document.getElementById('controltext');
-
-console.log(toggletext.textContent);
 
 toggleimage.addEventListener('click',imageToggle);
 
@@ -77,9 +77,38 @@ for(let x = 0; x<activenav.length; x++){
         activenav[x].className = 'active';
         activepanel[x].className = '';
 
+        let ti = activenav[x].textContent.trim();
+        //close menu tab on click
+        menu.className = '';
+
+        title.textContent = 'Junoswap | ' + ti;
+
         
 
     })
     
 }
 
+//populate menu;
+let menubtn = document.getElementById('dropdownMenu');
+let menu = document.getElementById('menu-part');
+let menupanel = document.querySelector('.menu-panel');
+let container = document.querySelector('.container');
+
+//instead of creating a new div here, I should display the menu part,
+//remove if from menu panel and add as a sibling to menu panel
+/*var undermenu = document.createElement('div');
+undermenu.className = 'mobiledropdown';
+
+undermenu.innerHTML = document.getElementById('menu-part').innerHTML;
+operations.parentNode.insertBefore(undermenu,operations); */
+
+menubtn.addEventListener('click',dropdown);
+//document.querySelector('.openmenu').innerHTML = "X";
+function dropdown(e){
+menu.classList.toggle('openmenu');
+operations.parentNode.insertBefore(menu,operations);
+ /* let menuStyling =  undermenu.style;
+  menuStyling.display = 'block';
+  menuStyling.backgroundColor = 'rgba(0,0,0,0.05)'; */
+}

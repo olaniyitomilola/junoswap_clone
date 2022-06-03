@@ -72,6 +72,7 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     border-radius: 0.2em;
     outline: none;
     border: none;
+    width: 100%;
 }
 #menu_nav{
     margin-top: 3em;
@@ -89,13 +90,16 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
 
 }
 #navlink img{
-    width: 18px;
-    height: 18px;
+    width: 1em;
+    height: 1em;
 }
-#navlink:hover, #lightcontrol:hover, .active,.feedgov:hover,#socialitem:hover{
-    background-color: rgba(25, 29, 32, 0.1);
+#navlink:hover, #lightcontrol:hover,.feedgov:hover,#socialitem:hover{
+    background-color: rgba(25, 29, 32, 0.05);
     border-radius: 0.3em;
-
+}
+.active{
+    background-color: rgba(25, 29, 32, 0.2);
+    border-radius: 0.3em;
 }
 #nav_logo{
     display: flex;
@@ -374,14 +378,10 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
 }
 #transferblock, #liquidityblock{
     color: black;
-    padding-left: 1em;
-    padding-right: 1em;
-
-
 }
 #transfertextheader, #liquidityheader{
     color: black;
-    font-size: x-large;
+    font-size: 1.2em;
 }
 #transfertextpara, #liquiditypara{
     margin-top: 2em;
@@ -460,7 +460,6 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     
 }
 #liquiditybond{
-
     width: 49%;
     background-color: rgba(25, 29, 32, 0.1);
     margin-top: 0.5em;
@@ -573,6 +572,20 @@ input[type=number] {
 #dropdownMenu{
     display: none;
 }
+#menu-part.openmenu{
+    background-color: rgba(0,0,0,0.1);
+    display: flex;
+}
+#menu-part.openmenu button{
+    padding: 0.75em;   
+    font-size: 1em;
+}
+
+.container#menu-part{
+    transition: all 0.3s ease-in-out 0s;
+}
+
+
 
 @media screen and (max-width:1050px) {
      .footpanel{
@@ -602,17 +615,16 @@ input[type=number] {
         border: none;
         border-radius: 0.5em;
     }
-  
-    }
     #liquiditybond{
         width: 100%;
     }
-@media screen and (max-width:415px) {
+}
+@media screen and (max-width:600px) {
     body{
         margin: auto;
         width: 100vw;
         height: 100vh;
-        font-size: 10px;
+        font-size: 13px;
     }
     .menu-panel{
         flex: none;
@@ -632,6 +644,9 @@ input[type=number] {
         margin: 0 auto;
         padding: 1em;
     }
+    .container#menu-part{
+        display: none;
+    }
    
     .operations-panel{
         padding: 0.5em;
@@ -647,7 +662,8 @@ input[type=number] {
         align-items: center;
         width: 6em;
         height: 2.5em;
-        font-size: 0.8em;
+        font-size: 1em;
+        font-weight: 500;
         border: none;
         border-radius: 0.5em;
         cursor: pointer;
