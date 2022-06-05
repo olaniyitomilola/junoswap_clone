@@ -572,6 +572,16 @@ input[type=number] {
 #dropdownMenu{
     display: none;
 }
+#close{
+    display: none;
+}
+#dropdownMenu.open #close{
+    display: block;
+    background-color: rgba(0,0,0,0.1) !important;
+}
+#dropdownMenu.open button{
+    display: none;
+}
 #menu-part.openmenu{
     background-color: rgba(0,0,0,0.1);
     display: flex;
@@ -644,14 +654,28 @@ input[type=number] {
         margin: 0 auto;
         padding: 1em;
     }
-    .container#menu-part{
-        display: none;
-    }
+
    
     .operations-panel{
         padding: 0.5em;
     }
     #dropdownMenu{
+        display: flex;
+        flex-direction: row;
+        padding: 0.5em;
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        justify-content: space-around;
+        align-items: center;
+        height: 2.5em;
+        font-size: 1em;
+        font-weight: 500;
+        border: none;
+        border-radius: 0.5em;
+        cursor: pointer;
+    }
+    #dropdownMenu button{
         display: flex;
         flex-direction: row;
         padding: 0.5em;

@@ -69,7 +69,7 @@
                 <div>Menu</div>
                 <img src="includes/resources/img/down-arrow.png" alt="">
             </button>
-            <div>X</div>
+            <div id = 'close'>X</div>
             
         </div>
         

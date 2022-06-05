@@ -80,6 +80,8 @@ for(let x = 0; x<activenav.length; x++){
         let ti = activenav[x].textContent.trim();
         //close menu tab on click
         menu.className = '';
+        menubtn.className = '';
+
 
         title.textContent = 'Junoswap | ' + ti;
 
@@ -107,6 +109,7 @@ menubtn.addEventListener('click',dropdown);
 //document.querySelector('.openmenu').innerHTML = "X";
 function dropdown(e){
 menu.classList.toggle('openmenu');
+menubtn.classList.toggle('open');
 operations.parentNode.insertBefore(menu,operations);
  /* let menuStyling =  undermenu.style;
   menuStyling.display = 'block';
