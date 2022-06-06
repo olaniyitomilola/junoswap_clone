@@ -218,6 +218,7 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     width: 100%;
 }
 #firstcoin,#coinexchange,#secondcoin{
+    position: relative;
     display: flex;
     flex-direction: row;
     padding: 0.5em;
@@ -241,6 +242,63 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     flex-wrap: wrap;
     padding: 0.5em;
 }
+#coinlist{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 1em;
+    z-index: 1;
+    height: 5em;
+}
+#coinlist:focus{
+    border:solid 1px #fff;
+}
+#searchbox{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+
+}
+#allcoins{
+    margin-top: 1.5em;
+    width: 100%;
+    height: 5em;
+}
+.eachcoin{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 0.5em; 
+}
+#info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#info img{
+    margin-right: 0.5em;
+}
+#name_small{
+    font-size: 0.8em;
+}
+
+
+#coinlist img{
+    height: 1em;
+    width: 1em;
+    cursor: pointer;   
+}
+#coinlist input{
+    background-color: inherit;
+    border: none;
+    outline: none;
+    flex: 1;
+    padding-left: 1em;
+}
 #swapcoin{
     display: flex;
     flex-direction: row;
@@ -260,6 +318,9 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     height: 4em;
     padding: 0.3em;
     justify-content: space-between;
+}
+#coinselect{
+    display: none;
 }
 #coininfo_img{
     display: flex;
@@ -591,7 +652,8 @@ input[type=number] {
     font-size: 1em;
 }
 
-.container#menu-part{
+.container #menu-part{
+    
     transition: all 0.3s ease-in-out 0s;
 }
 
@@ -604,6 +666,9 @@ input[type=number] {
      #coinselect,#selectcoin{
         flex: 100%;
 
+    }
+    .container #menu-part.openmenu{
+        transition: all 0.3s ease-in-out 0s;
     }
     #coinselect,#selectcoin{
         flex: 100%;

@@ -4,6 +4,41 @@
 </div>
 <form id="swap_box" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
     <div id="firstcoin">
+        <div id="coinlist">
+            <div id="searchbox">
+                <img src="includes/resources/img/search.png" alt="search">
+                <input name="coinname" type="text" placeholder="Search name or symbol">     
+                <img src="includes/resources/img/close.png" alt="search">
+            </div>
+            <div id="allcoins">
+                <?php for($i=0;$i<count($coin);$i++){ ?>
+                <div class="eachcoin">
+                    <div id="info">
+                        <img src="<?php echo $coin[$i]['logo']?>" alt="">
+                        <div id="name_">
+                            <div id="name_big">
+                                <?php echo $coin[$i]['name']?>
+                            </div>
+                            <div id="name_small">
+                                <?php echo $coin[$i]['name']?>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="balance">
+                        <div id="amount">
+                            0
+                        </div>
+                        <div id="amounttext">
+                            available
+                        </div>
+                    </div>
+                </div>
+                <?php }?>
+            </div>
+            
+
+        </div>
         <div id="coinselect">
             <div id="coininfo">
                 <div>

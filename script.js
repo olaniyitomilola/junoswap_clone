@@ -96,6 +96,29 @@ let menubtn = document.getElementById('dropdownMenu');
 let menu = document.getElementById('menu-part');
 let menupanel = document.querySelector('.menu-panel');
 let container = document.querySelector('.container');
+//check mediaquery
+var screenSize = window.matchMedia("(max-width:600px)");
+
+function screenssSize(x){
+    
+    if(x.matches){
+        //menu button should remove the open classname, 
+        //regardless of what the last toggle action before screenchange is
+        menubtn.className = '';
+        menu.className = '';
+    } else{
+        menu.className = " ";
+        var menu_part = document.querySelector(".container #menu-part");
+        //once you add an element to another parent, it gets removed
+        //from the other parent. insertBefore works like a subtitute        
+        var footpart = document.getElementById("foot-part");
+        footpart.parentNode.insertBefore(menu_part,footpart);
+       
+    }
+}
+screenSize.addListener(screenssSize);
+
+
 
 //instead of creating a new div here, I should display the menu part,
 //remove if from menu panel and add as a sibling to menu panel
@@ -111,7 +134,5 @@ function dropdown(e){
 menu.classList.toggle('openmenu');
 menubtn.classList.toggle('open');
 operations.parentNode.insertBefore(menu,operations);
- /* let menuStyling =  undermenu.style;
-  menuStyling.display = 'block';
-  menuStyling.backgroundColor = 'rgba(0,0,0,0.05)'; */
+ 
 }
