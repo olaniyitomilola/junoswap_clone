@@ -11,7 +11,6 @@ var firstCoin = document.getElementById('firstcoin').innerHTML;
 var secondCoin = document.getElementById('secondcoin').innerHTML;
 
 function coinSwap (){
-    console.log('clicked');
     //console.log(firstCoin);
     //console.log(secondCoin);
     var source = coinchange.getAttribute('src');
@@ -76,17 +75,11 @@ for(let x = 0; x<activenav.length; x++){
         }
         activenav[x].className = 'active';
         activepanel[x].className = '';
-
         let ti = activenav[x].textContent.trim();
         //close menu tab on click
         menu.className = '';
         menubtn.className = '';
-
-
         title.textContent = 'Junoswap | ' + ti;
-
-        
-
     })
     
 }
@@ -136,3 +129,52 @@ menubtn.classList.toggle('open');
 operations.parentNode.insertBefore(menu,operations);
  
 }
+
+//dropdown of coinlist on swap page
+
+let swapvalue = document.getElementById('swapvalue');
+let coinselect = document.getElementById('coinselect');
+let coindropdown = document.getElementById('coinlist');
+let listclose = document.getElementById('listclose');
+
+
+
+coinselect.addEventListener('click',dropIt)
+listclose.addEventListener('click',closeit);
+function dropIt (e){
+    console.log(e.type);
+    this.style.display = 'none';
+    coindropdown.style.display = 'block';
+    swapvalue.style.display = 'none';
+
+}
+function closeit(e){
+    coindropdown.style.display = 'none';
+    coinselect.style.display ='flex';
+    swapvalue.style.display = 'block';
+
+}
+
+//close the dropdownlist when there is a click outside it
+
+/*window.addEventListener('mouseup', function(e){
+    if(e.target != coindropdown && e.target.parentNode !=coindropdown){
+        closeit();
+    }
+}) */
+//change the textcontent in firstcoin to select
+
+let eachcoin = document.querySelectorAll('.eachcoin');
+
+for(const x = 0;x<eachcoin.length;x++){
+    eachcoin[x].addEventListener("click",function(e){
+        let i = 0;
+        while (i<eachcoin.length){
+            eachcoin[i++].id = '';
+        }
+        eachcoin[x].id = 'active';
+
+    });
+
+     
+} 

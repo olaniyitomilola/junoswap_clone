@@ -218,7 +218,6 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     width: 100%;
 }
 #firstcoin,#coinexchange,#secondcoin{
-    position: relative;
     display: flex;
     flex-direction: row;
     padding: 0.5em;
@@ -243,36 +242,54 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     padding: 0.5em;
 }
 #coinlist{
-    position: absolute;
+    display: none;
     top: 0;
     left:0;
     width: 100%;
     padding: 1em;
     z-index: 1;
-    height: 5em;
 }
-#coinlist:focus{
-    border:solid 1px #fff;
+#balance{
+    font-size: 0.8em;
+    text-align: right;
 }
+
 #searchbox{
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+    border-bottom: solid 1px rgba(25, 29, 32, 0.3);
+    padding-top: 0.5em;
+    padding-bottom: 1em;
 
 }
 #allcoins{
-    margin-top: 1.5em;
+    margin-top: 1em;
     width: 100%;
-    height: 5em;
+    flex: 1;
+    overflow:  auto;
+    height: 10em;
+
+}
+#allcoins::-webkit-scrollbar{
+    display: none;
 }
 .eachcoin{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center; 
-    margin-bottom: 0.5em; 
+    padding: 0.25em;
+    border-radius: 0.5em;
+}
+.eachcoin:hover{
+ background-color: rgba(25, 29, 32, 0.1);
+}
+.eachcoin#active{
+    background-color: rgba(25, 29, 32, 0.3);
+
 }
 #info{
     display: flex;
@@ -283,6 +300,9 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     margin-right: 0.5em;
 }
 #name_small{
+    font-size: 0.6em;
+}
+#name_big{
     font-size: 0.8em;
 }
 
@@ -319,9 +339,7 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     padding: 0.3em;
     justify-content: space-between;
 }
-#coinselect{
-    display: none;
-}
+
 #coininfo_img{
     display: flex;
     align-items: center;
@@ -340,11 +358,7 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     border-radius: 0.5em;
 
 }
-#firstcoin:hover{
-    background-color: rgba(25, 29, 32, 0.3);
 
-
-}
 #coininfo{
     display: flex;
     flex-direction: row;
@@ -357,7 +371,7 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
 }
 
 #coinname{
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: rgba(25, 29, 32, 0.7);
 
 }
@@ -366,6 +380,8 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     padding: 1em;
 
 }
+
+
 #coinvalue{
     flex: 80%;
     padding: 1em;
@@ -601,7 +617,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 #coinbalance{
-    font-size: 1em;
+    font-size: 0.7em;
 }
 
 

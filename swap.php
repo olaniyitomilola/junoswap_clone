@@ -8,7 +8,7 @@
             <div id="searchbox">
                 <img src="includes/resources/img/search.png" alt="search">
                 <input name="coinname" type="text" placeholder="Search name or symbol">     
-                <img src="includes/resources/img/close.png" alt="search">
+                <img id = 'listclose' src="includes/resources/img/close.png" alt="search">
             </div>
             <div id="allcoins">
                 <?php for($i=0;$i<count($coin);$i++){ ?>
