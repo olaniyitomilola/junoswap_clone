@@ -14,19 +14,21 @@ function coinSwap (){
     //console.log(firstCoin);
     //console.log(secondCoin);
     var source = coinchange.getAttribute('src');
-    var temp = null;
+   // var temp = null;
         
      if(source == 'includes/resources/img/up-down.png'){
         coinchange.src = 'includes/resources/img/down-up.png';
-        temp = firstCoin;
+       let  temp = firstCoin;
         document.getElementById('firstcoin').innerHTML = document.getElementById('secondcoin').innerHTML;
         document.getElementById('secondcoin').innerHTML = temp;
+        temp = null;
         
         } else{
             coinchange.src = 'includes/resources/img/up-down.png';
-            temp = firstCoin;
+          let  temp = firstCoin;
             document.getElementById('secondcoin').innerHTML = document.getElementById('firstcoin').innerHTML;
             document.getElementById('firstcoin').innerHTML = temp;
+            temp = null;
         }
 };
 
@@ -137,13 +139,15 @@ let coinselect = document.getElementById('coinselect');
 let coindropdown = document.getElementById('coinlist');
 let listclose = document.getElementById('listclose');
 
+window.addEventListener('click',function(e){
+    console.log(e.target);
+})
 
-
-coinselect.addEventListener('click',dropIt)
+coinselect.addEventListener('click',dropIt);
 listclose.addEventListener('click',closeit);
 function dropIt (e){
     console.log(e.type);
-    this.style.display = 'none';
+    coinselect.style.display = 'none';
     coindropdown.style.display = 'block';
     swapvalue.style.display = 'none';
 
@@ -157,16 +161,16 @@ function closeit(e){
 
 //close the dropdownlist when there is a click outside it
 
-/*window.addEventListener('mouseup', function(e){
+window.addEventListener('mouseup', function(e){
     if(e.target != coindropdown && e.target.parentNode !=coindropdown){
         closeit();
     }
-}) */
+})
 //change the textcontent in firstcoin to select
 
 let eachcoin = document.querySelectorAll('.eachcoin');
 
-for(const x = 0;x<eachcoin.length;x++){
+for(let x = 0;x<eachcoin.length;x++){
     eachcoin[x].addEventListener("click",function(e){
         let i = 0;
         while (i<eachcoin.length){
