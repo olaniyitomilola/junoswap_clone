@@ -241,7 +241,7 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     flex-wrap: wrap;
     padding: 0.5em;
 }
-#coinlist{
+#coinlist, #coinlist2{
     display: none;
     top: 0;
     left:0;
@@ -307,12 +307,12 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
 }
 
 
-#coinlist img{
+#coinlist img, #coinlist2 img{
     height: 1em;
     width: 1em;
     cursor: pointer;   
 }
-#coinlist input{
+#coinlist input, #coinlist2 input{
     background-color: inherit;
     border: none;
     outline: none;

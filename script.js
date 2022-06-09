@@ -135,29 +135,56 @@ operations.parentNode.insertBefore(menu,operations);
 //dropdown of coinlist on swap page
 
 let swapvalue = document.getElementById('swapvalue');
+let coinvalue = document.getElementById('coinvalue');
 let coinselect = document.getElementById('coinselect');
+let selectcoin = document.getElementById('selectcoin');
+
+
 let coindropdown = document.getElementById('coinlist');
+let coindropdown2 = document.getElementById('coinlist2');
 let listclose = document.getElementById('listclose');
+let listclose2 = document.getElementById('listclose2');
 
 window.addEventListener('click',function(e){
-    console.log(e.target);
+   // console.log(e.target);
 })
 
 coinselect.addEventListener('click',dropIt);
 listclose.addEventListener('click',closeit);
-function dropIt (e){
-    console.log(e.type);
-    coinselect.style.display = 'none';
-    coindropdown.style.display = 'block';
-    swapvalue.style.display = 'none';
+listclose2.addEventListener('click',closeit);
 
+
+function dropIt (e){
+
+    if(this==coinselect){
+        console.log(e.type);
+        this.style.display = 'none';
+        coindropdown.style.display = 'block';
+        swapvalue.style.display = 'none';
+    }
+    if(this==selectcoin){
+        console.log(e.type);
+        this.style.display = 'none';
+        coindropdown2.style.display = 'block';
+        coinvalue.style.display = 'none';
+    }
 }
 function closeit(e){
-    coindropdown.style.display = 'none';
-    coinselect.style.display ='flex';
-    swapvalue.style.display = 'block';
+    if(e.target == listclose){
+        coindropdown.style.display = 'none';
+        coinselect.style.display ='flex';
+        swapvalue.style.display = 'block';
+    }
+    
+    if(e.target == listclose2){
 
+        coinvalue.style.display = 'flex';
+        selectcoin.style.display = 'flex';
+        coindropdown2.style.display = 'none';
+    }    
 }
+selectcoin.addEventListener('click',dropIt);
+
 
 //close the dropdownlist when there is a click outside it
 
@@ -166,9 +193,13 @@ window.addEventListener('mouseup', function(e){
         closeit();
     }
 })
+let coinname = document.getElementById('coinname');
+let coinimg = document.getElementById('coinfo_img');
 //change the textcontent in firstcoin to select
 
-let eachcoin = document.querySelectorAll('.eachcoin');
+let eachcoin = document.querySelectorAll('#coinlist #allcoins .eachcoin');
+let eachcoin2 = document.querySelectorAll('#coinlist2 #allcoins .eachcoin');
+
 
 for(let x = 0;x<eachcoin.length;x++){
     eachcoin[x].addEventListener("click",function(e){
@@ -177,8 +208,31 @@ for(let x = 0;x<eachcoin.length;x++){
             eachcoin[i++].id = '';
         }
         eachcoin[x].id = 'active';
+        //set the element in coininfo
+        coinimg.src = eachcoin[x].firstElementChild.firstElementChild.src;
+        coinname.textContent = eachcoin[x].firstElementChild.lastElementChild.firstElementChild.textContent;
+       // closeit();
+        // console.log(coinname.textContent = eachcoin[x].children[1].firstElementChild.textContent);
+    });     
+}
+let coininfo2 = document.querySelector('#selectcoin #coininfo') 
+for(let x = 0;x<eachcoin2.length;x++){
+    eachcoin2[x].addEventListener("click",function(e){
+        let i = 0;
+        while (i<eachcoin2.length){
+            eachcoin2[i++].id = '';
+        }
+        eachcoin2[x].id = 'active';
 
-    });
+       // coininfo2.innerHTML = coinimg.parentElement.innerHTML;
+       //set the element in coininfo
+        // change from select a coin
 
-     
+
+       // coinimg.src = eachcoin[x].firstElementChild.firstElementChild.src;
+        //coinname.textContent = eachcoin[x].firstElementChild.lastElementChild.firstElementChild.textContent;
+       // closeit();
+        // console.log(coinname.textContent = eachcoin[x].children[1].firstElementChild.textContent);
+    });     
 } 
+

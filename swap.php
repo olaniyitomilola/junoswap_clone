@@ -74,6 +74,41 @@
         </div>
     </div>
     <div id="secondcoin">
+        <div id="coinlist2">
+            <div id="searchbox">
+                <img src="includes/resources/img/search.png" alt="search">
+                <input name="coinname" type="text" placeholder="Search name or symbol">     
+                <img id = 'listclose2' src="includes/resources/img/close.png" alt="search">
+            </div>
+            <div id="allcoins">
+                <?php for($i=0;$i<count($coin);$i++){ ?>
+                <div class="eachcoin">
+                    <div id="info">
+                        <img src="<?php echo $coin[$i]['logo']?>" alt="">
+                        <div id="name_">
+                            <div id="name_big">
+                                <?php echo $coin[$i]['name']?>
+                            </div>
+                            <div id="name_small">
+                                <?php echo $coin[$i]['name']?>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="balance">
+                        <div id="amount">
+                            0
+                        </div>
+                        <div id="amounttext">
+                            available
+                        </div>
+                    </div>
+                </div>
+                <?php }?>
+            </div>
+            
+
+        </div>
         <div id="selectcoin">
             <div id="coininfo">
                 <div>Select a Token</div>
