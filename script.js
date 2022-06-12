@@ -7,27 +7,27 @@ var title = document.querySelector('title');
 title.textContent = 'JunoSwap | Swap';
 
 //swap the elements in the first coin to the second
-var firstCoin = document.getElementById('firstcoin').innerHTML;
-var secondCoin = document.getElementById('secondcoin').innerHTML;
+let firstCoin = document.getElementById('firstcoin');
+let secondCoin = document.getElementById('secondcoin');
+
 
 function coinSwap (){
-    //console.log(firstCoin);
-    //console.log(secondCoin);
-    var source = coinchange.getAttribute('src');
+  
    // var temp = null;
-        
+    let source = coinchange.getAttribute('src');
+
      if(source == 'includes/resources/img/up-down.png'){
-        coinchange.src = 'includes/resources/img/down-up.png';
-       let  temp = firstCoin;
-        document.getElementById('firstcoin').innerHTML = document.getElementById('secondcoin').innerHTML;
-        document.getElementById('secondcoin').innerHTML = temp;
-        temp = null;
+            coinchange.src = 'includes/resources/img/down-up.png';
+            let  temp = firstCoin.innerHTML;
+            firstCoin.innerHTML = document.getElementById('secondcoin').innerHTML;
+            secondCoin.innerHTML = temp;
+            temp = null;
         
         } else{
             coinchange.src = 'includes/resources/img/up-down.png';
-          let  temp = firstCoin;
-            document.getElementById('secondcoin').innerHTML = document.getElementById('firstcoin').innerHTML;
-            document.getElementById('firstcoin').innerHTML = temp;
+            let  temp = secondCoin.innerHTML;
+            secondCoin.innerHTML = document.getElementById('firstcoin').innerHTML;
+            firstCoin.innerHTML = temp;
             temp = null;
         }
 };
@@ -181,7 +181,8 @@ function closeit(e){
         coinvalue.style.display = 'flex';
         selectcoin.style.display = 'flex';
         coindropdown2.style.display = 'none';
-    }    
+    }
+
 }
 selectcoin.addEventListener('click',dropIt);
 
@@ -189,10 +190,12 @@ selectcoin.addEventListener('click',dropIt);
 //close the dropdownlist when there is a click outside it
 
 window.addEventListener('mouseup', function(e){
+
+    console.log(e.target);
     if(e.target != coindropdown && e.target.parentNode !=coindropdown){
-        closeit();
+      //  closeit();
     }
-})
+}) 
 let coinname = document.getElementById('coinname');
 let coinimg = document.getElementById('coinfo_img');
 //change the textcontent in firstcoin to select
@@ -211,7 +214,11 @@ for(let x = 0;x<eachcoin.length;x++){
         //set the element in coininfo
         coinimg.src = eachcoin[x].firstElementChild.firstElementChild.src;
         coinname.textContent = eachcoin[x].firstElementChild.lastElementChild.firstElementChild.textContent;
-       // closeit();
+        //closeit();
+        coindropdown.style.display = 'none';
+        coinselect.style.display ='flex';
+        swapvalue.style.display = 'block';
+       
         // console.log(coinname.textContent = eachcoin[x].children[1].firstElementChild.textContent);
     });     
 }
@@ -224,15 +231,23 @@ for(let x = 0;x<eachcoin2.length;x++){
         }
         eachcoin2[x].id = 'active';
 
-       // coininfo2.innerHTML = coinimg.parentElement.innerHTML;
+       coininfo2.innerHTML = coinimg.parentElement.parentElement.innerHTML;
+       let coinimg2 = document.querySelector('#selectcoin #coininfo #coinfo_img');
+       let coinname2 = document.querySelector('#selectcoin #coininfo #nameandbalance #coinname');
+       
+       coinimg2.src = eachcoin2[x].firstElementChild.firstElementChild.src;
+       coinname2.textContent = eachcoin2[x].firstElementChild.lastElementChild.firstElementChild.textContent;
+
        //set the element in coininfo
         // change from select a coin
 
 
-       // coinimg.src = eachcoin[x].firstElementChild.firstElementChild.src;
-        //coinname.textContent = eachcoin[x].firstElementChild.lastElementChild.firstElementChild.textContent;
        // closeit();
+       coinvalue.style.display = 'flex';
+       selectcoin.style.display = 'flex';
+       coindropdown2.style.display = 'none';
         // console.log(coinname.textContent = eachcoin[x].children[1].firstElementChild.textContent);
     });     
 } 
+
 
