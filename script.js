@@ -19,16 +19,27 @@ function coinSwap (){
      if(source == 'includes/resources/img/up-down.png'){
             coinchange.src = 'includes/resources/img/down-up.png';
             let  temp = firstCoin.innerHTML;
-            firstCoin.innerHTML = document.getElementById('secondcoin').innerHTML;
-            secondCoin.innerHTML = temp;
-            temp = null;
+            //firstCoin.innerHTML = document.getElementById('secondcoin').innerHTML;
+            firstCoin.insertBefore(selectcoin,firstCoin.children[0]);
+            firstCoin.insertBefore(coindropdown2,firstCoin.children[0]);
+            secondCoin.insertBefore(coinselect,secondCoin.children[0]);
+            secondCoin.insertBefore(coindropdown,secondCoin.children[0]);
+
+            //temp = null;
+            
         
         } else{
             coinchange.src = 'includes/resources/img/up-down.png';
-            let  temp = secondCoin.innerHTML;
-            secondCoin.innerHTML = document.getElementById('firstcoin').innerHTML;
-            firstCoin.innerHTML = temp;
-            temp = null;
+            //let  temp = secondCoin.innerHTML;
+            //secondCoin.innerHTML = document.getElementById('firstcoin').innerHTML;
+            //firstCoin.innerHTML = temp;
+            //temp = null;
+            secondCoin.insertBefore(selectcoin,secondCoin.children[0]);
+            secondCoin.insertBefore(coindropdown2,secondCoin.children[0]);
+            firstCoin.insertBefore(coinselect,firstCoin.children[0]);
+            firstCoin.insertBefore(coindropdown,firstCoin.children[0]);
+
+            
         }
 };
 
