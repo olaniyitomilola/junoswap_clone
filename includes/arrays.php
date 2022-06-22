@@ -130,5 +130,5 @@ $coin = [
         'name' => "USDC",
         'logo' => "includes/resources/img/usdc.svg"
     ]
-]
-?>
+    ];
+

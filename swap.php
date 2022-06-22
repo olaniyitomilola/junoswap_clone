@@ -65,13 +65,17 @@
         <div id="exchangeicon">
             <img id = "tradeswap" src="includes/resources/img/up-down.png" alt="">
         </div>
-        <div id= "coinconversion">
 
-        </div>
+        <div id = coinundex>
+            <div id= "coinconversion">
+                        1 Juno = 144.518 RAW = $2.34
+            </div>
 
-        <div id="exchangevalue">
-        
+            <div id="exchangevalue">
+                    Swap estimate = $0.00
+            </div>
         </div>
+       
     </div>
     <div id="secondcoin">
         <div id="coinlist2">

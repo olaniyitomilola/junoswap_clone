@@ -399,6 +399,13 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     text-align: end;
 
 }
+#coinundex{
+    display: none;
+    color: rgba(25, 29, 32, 0.5);
+    font-size: 0.7em;
+    text-align: end;
+    letter-spacing: 1px;
+}
 #exchangeicon{
     padding: 0.5em;
 }

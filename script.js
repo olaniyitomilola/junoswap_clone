@@ -25,6 +25,7 @@ function coinSwap (){
             secondCoin.insertBefore(coinselect,secondCoin.children[0]);
             secondCoin.insertBefore(coindropdown,secondCoin.children[0]);
 
+
             //temp = null;
             
         
@@ -37,9 +38,7 @@ function coinSwap (){
             secondCoin.insertBefore(selectcoin,secondCoin.children[0]);
             secondCoin.insertBefore(coindropdown2,secondCoin.children[0]);
             firstCoin.insertBefore(coinselect,firstCoin.children[0]);
-            firstCoin.insertBefore(coindropdown,firstCoin.children[0]);
-
-            
+            firstCoin.insertBefore(coindropdown,firstCoin.children[0]);c
         }
 };
 
@@ -178,6 +177,7 @@ function dropIt (e){
         this.style.display = 'none';
         coindropdown2.style.display = 'block';
         coinvalue.style.display = 'none';
+
     }
 }
 function closeit(e){
@@ -241,7 +241,7 @@ for(let x = 0;x<eachcoin2.length;x++){
             eachcoin2[i++].id = '';
         }
         eachcoin2[x].id = 'active';
-
+        convert();
        coininfo2.innerHTML = coinimg.parentElement.parentElement.innerHTML;
        let coinimg2 = document.querySelector('#selectcoin #coininfo #coinfo_img');
        let coinname2 = document.querySelector('#selectcoin #coininfo #nameandbalance #coinname');
@@ -260,5 +260,47 @@ for(let x = 0;x<eachcoin2.length;x++){
         // console.log(coinname.textContent = eachcoin[x].children[1].firstElementChild.textContent);
     });     
 } 
+
+//now do conversion of input in the swap
+
+let coinrate = {
+    'osmosis' : 0.72,
+    'juno' : 2.22,
+    'atom' : 5.94,
+    'raw' : 0.02,
+    'stars': 0.0187,
+    'huahua': 0.000027,
+    'btsg' : 0.011365,
+    'xprt' : 0.90994,
+    'cdmx': 0.185566,
+    'akash' : 0.201856,
+    'scrt':0.89943,
+    'neta' : 39.61023,
+    'rac' : 0.060601,
+    'marble' : 3.454504,
+    'hope': 5.624821,
+    'dig' : 0.000234,
+    'canlab': 0.022397,
+    'bitcanna': 0.00532,
+    'ngm': 0.680325,
+    'comdex' : 0.8345,
+    'eeur': 1
+
+}
+
+//exchange value
+
+let conversion = document.getElementById('coinundex');
+let twocoins = document.getElementById('coinconversion');
+
+var cointexts = '1 ' + coinname2.textContent + '= ';
+twocoins.textContent = cointexts;
+//let cointext = '1' +
+function convert(e){
+    let check = coininfo2.firstElementChild;
+    console.log(check);
+    conversion.style.display = 'block';
+}
+
 
 
