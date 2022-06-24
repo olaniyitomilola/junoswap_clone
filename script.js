@@ -38,7 +38,7 @@ function coinSwap (){
             secondCoin.insertBefore(selectcoin,secondCoin.children[0]);
             secondCoin.insertBefore(coindropdown2,secondCoin.children[0]);
             firstCoin.insertBefore(coinselect,firstCoin.children[0]);
-            firstCoin.insertBefore(coindropdown,firstCoin.children[0]);c
+            firstCoin.insertBefore(coindropdown,firstCoin.children[0]);
         }
 };
 
@@ -52,7 +52,6 @@ var controller = document.getElementById('controltext');
 toggleimage.addEventListener('click',imageToggle);
 
 function imageToggle(e){
-    console.log(e.target);
     if(toggleimage.getAttribute('src')=='includes/resources/img/light.png'){
         toggleimage.src = 'includes/resources/img/dark.png';
         toggletext.textContent = 'Dark mode';
@@ -167,13 +166,11 @@ listclose2.addEventListener('click',closeit);
 function dropIt (e){
 
     if(this==coinselect){
-        console.log(e.type);
         this.style.display = 'none';
         coindropdown.style.display = 'block';
         swapvalue.style.display = 'none';
     }
     if(this==selectcoin){
-        console.log(e.type);
         this.style.display = 'none';
         coindropdown2.style.display = 'block';
         coinvalue.style.display = 'none';
@@ -202,7 +199,6 @@ selectcoin.addEventListener('click',dropIt);
 
 window.addEventListener('mouseup', function(e){
 
-    console.log(e.target);
     if(e.target != coindropdown && e.target.parentNode !=coindropdown){
       //  closeit();
     }
@@ -233,7 +229,8 @@ for(let x = 0;x<eachcoin.length;x++){
         // console.log(coinname.textContent = eachcoin[x].children[1].firstElementChild.textContent);
     });     
 }
-let coininfo2 = document.querySelector('#selectcoin #coininfo') 
+let coininfo2 = document.querySelector('#selectcoin #coininfo');
+
 for(let x = 0;x<eachcoin2.length;x++){
     eachcoin2[x].addEventListener("click",function(e){
         let i = 0;
@@ -245,13 +242,12 @@ for(let x = 0;x<eachcoin2.length;x++){
        coininfo2.innerHTML = coinimg.parentElement.parentElement.innerHTML;
        let coinimg2 = document.querySelector('#selectcoin #coininfo #coinfo_img');
        let coinname2 = document.querySelector('#selectcoin #coininfo #nameandbalance #coinname');
-       
+
        coinimg2.src = eachcoin2[x].firstElementChild.firstElementChild.src;
        coinname2.textContent = eachcoin2[x].firstElementChild.lastElementChild.firstElementChild.textContent;
-
-       //set the element in coininfo
-        // change from select a coin
-
+       //the next two lines moved into this because I dont know how to go about the reading
+       //of the text in coinname2 from the global. bna null e dey bring
+       exchangeValue(coinname2);
 
        // closeit();
        coinvalue.style.display = 'flex';
@@ -264,7 +260,7 @@ for(let x = 0;x<eachcoin2.length;x++){
 //now do conversion of input in the swap
 
 let coinrate = {
-    'osmosis' : 0.72,
+    'osmo' : 0.72,
     'juno' : 2.22,
     'atom' : 5.94,
     'raw' : 0.02,
@@ -284,23 +280,49 @@ let coinrate = {
     'bitcanna': 0.00532,
     'ngm': 0.680325,
     'comdex' : 0.8345,
-    'eeur': 1
+    'eeur': 1,
+    'usdc': 1
 
 }
-
+let converted;
 //exchange value
+function exchangeValue(coinname2){
+    let twocoins = document.getElementById('coinconversion');
+    var firstcoinvalue , secondcoinvalue;
+    var $firstcoinvalue = coinname.textContent.toLowerCase().trim();
+    var $secondcoinvalue = coinname2.textContent.toLowerCase().trim();
+    firstcoinvalue = coinrate[$firstcoinvalue];
+    secondcoinvalue = coinrate[$secondcoinvalue];
+
+    converted = firstcoinvalue/secondcoinvalue;
+    var convert2dp = converted.toFixed(2);
+    var cointexts = '1 ' + coinname.textContent + '= ' + convert2dp + ' '+ coinname2.textContent; 
+    twocoins.textContent = cointexts;
+    
+}
 
 let conversion = document.getElementById('coinundex');
-let twocoins = document.getElementById('coinconversion');
 
-var cointexts = '1 ' + coinname2.textContent + '= ';
-twocoins.textContent = cointexts;
 //let cointext = '1' +
 function convert(e){
-    let check = coininfo2.firstElementChild;
-    console.log(check);
     conversion.style.display = 'block';
 }
+
+let swapinput = document.getElementById('swapamount');
+let coinswapvalue = document.getElementById('coinvalue');
+ swapinput.addEventListener('keyup', function(e){
+    if(conversion.style.display == 'block'){
+
+            if(swapinput.value * converted > 0) {
+                coinswapvalue.innerText =  (swapinput.value * converted).toFixed(2);
+
+            } else{
+                coinswapvalue.innerText = 0;
+            }
+        
+
+    }
+}) 
 
 
 

@@ -57,7 +57,7 @@
 
         </div>
         <div id="swapvalue">
-            <input type="number" placeholder="0" name="swapamount" >
+            <input id = 'swapamount' type="number" placeholder="0" name="swapamount" >
           
         </div>
     </div>
