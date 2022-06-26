@@ -387,14 +387,14 @@ width using flex-basis and have 0 shrink or a zero pointer, for very small shrin
     padding: 1em;
     display: flex;
     justify-content: flex-end;
-    font-size: 1.4em;
+    font-size: 1em;
 }
 #swapvalue input{
 
     border: none;
     outline: none;
     background-color: inherit;
-    font-size: 1.4em;
+    font-size: 1em;
     float: right;
     text-align: end;
 

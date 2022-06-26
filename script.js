@@ -248,6 +248,7 @@ for(let x = 0;x<eachcoin2.length;x++){
        //the next two lines moved into this because I dont know how to go about the reading
        //of the text in coinname2 from the global. bna null e dey bring
        exchangeValue(coinname2);
+       inputconverter();
 
        // closeit();
        coinvalue.style.display = 'flex';
@@ -285,18 +286,20 @@ let coinrate = {
 
 }
 let converted;
+var $firstcoinvalue = coinname.textContent.toLowerCase().trim();
+
 //exchange value
 function exchangeValue(coinname2){
     let twocoins = document.getElementById('coinconversion');
     var firstcoinvalue , secondcoinvalue;
-    var $firstcoinvalue = coinname.textContent.toLowerCase().trim();
     var $secondcoinvalue = coinname2.textContent.toLowerCase().trim();
     firstcoinvalue = coinrate[$firstcoinvalue];
     secondcoinvalue = coinrate[$secondcoinvalue];
 
     converted = firstcoinvalue/secondcoinvalue;
     var convert2dp = converted.toFixed(2);
-    var cointexts = '1 ' + coinname.textContent + '= ' + convert2dp + ' '+ coinname2.textContent; 
+    var cointexts = '1 ' + coinname.textContent + '= ' + convert2dp + ' '+ coinname2.textContent;
+    
     twocoins.textContent = cointexts;
     
 }
@@ -310,19 +313,22 @@ function convert(e){
 
 let swapinput = document.getElementById('swapamount');
 let coinswapvalue = document.getElementById('coinvalue');
- swapinput.addEventListener('keyup', function(e){
-    if(conversion.style.display == 'block'){
+let dollarvalue = document.getElementById('exchangevalue');
 
+swapinput.addEventListener('keyup',inputconverter );
+ 
+function inputconverter(e){
+    if(conversion.style.display == 'block'){
+        var estimate = 'Swap estimate = $' + (swapinput.value * coinrate[$firstcoinvalue]).toFixed(2);
+        dollarvalue.textContent = estimate; 
             if(swapinput.value * converted > 0) {
                 coinswapvalue.innerText =  (swapinput.value * converted).toFixed(2);
 
             } else{
                 coinswapvalue.innerText = 0;
             }
-        
-
     }
-}) 
+}
 
 
 
