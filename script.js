@@ -225,7 +225,14 @@ for(let x = 0;x<eachcoin.length;x++){
         coindropdown.style.display = 'none';
         coinselect.style.display ='flex';
         swapvalue.style.display = 'block';
-       
+        let coinname2 = document.querySelector('#selectcoin #coininfo #nameandbalance #coinname');
+
+
+        if(convert){
+            exchangeValue(coinname2);
+
+        }
+     //   inputconverter;
         // console.log(coinname.textContent = eachcoin[x].children[1].firstElementChild.textContent);
     });     
 }
@@ -248,7 +255,7 @@ for(let x = 0;x<eachcoin2.length;x++){
        //the next two lines moved into this because I dont know how to go about the reading
        //of the text in coinname2 from the global. bna null e dey bring
        exchangeValue(coinname2);
-       inputconverter();
+     //  inputconverter();
 
        // closeit();
        coinvalue.style.display = 'flex';
@@ -302,11 +309,24 @@ function exchangeValue(coinname2){
     
     twocoins.textContent = cointexts;
     
+    inputconverter();
+
+    
 }
 
 let conversion = document.getElementById('coinundex');
+function inputconverter(e){
+    if(conversion.style.display == 'block'){
+        var estimate = 'Swap estimate = $' + (swapinput.value * coinrate[$firstcoinvalue]).toFixed(2);
+        dollarvalue.textContent = estimate; 
+        if(swapinput.value * converted > 0) {
+            coinswapvalue.innerText =  (swapinput.value * converted).toFixed(2);
 
-//let cointext = '1' +
+        } else{
+            coinswapvalue.innerText = 0;
+        }
+    }
+}
 function convert(e){
     conversion.style.display = 'block';
 }
@@ -317,18 +337,7 @@ let dollarvalue = document.getElementById('exchangevalue');
 
 swapinput.addEventListener('keyup',inputconverter );
  
-function inputconverter(e){
-    if(conversion.style.display == 'block'){
-        var estimate = 'Swap estimate = $' + (swapinput.value * coinrate[$firstcoinvalue]).toFixed(2);
-        dollarvalue.textContent = estimate; 
-            if(swapinput.value * converted > 0) {
-                coinswapvalue.innerText =  (swapinput.value * converted).toFixed(2);
 
-            } else{
-                coinswapvalue.innerText = 0;
-            }
-    }
-}
 
 
 
