@@ -1,74 +1,34 @@
 var x = document.getElementById("connector");
 var coinchange = document.getElementById("tradeswap");
-coinchange.addEventListener("click", coinSwap);
 var mode = document.getElementById
 var title = document.querySelector('title');
-
-title.textContent = 'JunoSwap | Swap';
-
-//swap the elements in the first coin to the second
+let swapvalue = document.getElementById('swapvalue');
+let coinvalue = document.getElementById('coinvalue');
+let coinselect = document.getElementById('coinselect');
+let selectcoin = document.getElementById('selectcoin');
+let coindropdown = document.getElementById('coinlist');
+let coindropdown2 = document.getElementById('coinlist2');
+let listclose = document.getElementById('listclose');
+let listclose2 = document.getElementById('listclose2');
 let firstCoin = document.getElementById('firstcoin');
 let secondCoin = document.getElementById('secondcoin');
-
-
-function coinSwap (){
-  
-   // var temp = null;
-    let source = coinchange.getAttribute('src');
-
-     if(source == 'includes/resources/img/up-down.png'){
-            coinchange.src = 'includes/resources/img/down-up.png';
-            let  temp = firstCoin.innerHTML;
-            //firstCoin.innerHTML = document.getElementById('secondcoin').innerHTML;
-            firstCoin.insertBefore(selectcoin,firstCoin.children[0]);
-            firstCoin.insertBefore(coindropdown2,firstCoin.children[0]);
-            secondCoin.insertBefore(coinselect,secondCoin.children[0]);
-            secondCoin.insertBefore(coindropdown,secondCoin.children[0]);
-
-
-            //temp = null;
-            
-        
-        } else{
-            coinchange.src = 'includes/resources/img/up-down.png';
-            //let  temp = secondCoin.innerHTML;
-            //secondCoin.innerHTML = document.getElementById('firstcoin').innerHTML;
-            //firstCoin.innerHTML = temp;
-            //temp = null;
-            secondCoin.insertBefore(selectcoin,secondCoin.children[0]);
-            secondCoin.insertBefore(coindropdown2,secondCoin.children[0]);
-            firstCoin.insertBefore(coinselect,firstCoin.children[0]);
-            firstCoin.insertBefore(coindropdown,firstCoin.children[0]);
-        }
-};
-
-
-//lightmode and darkmode toggle
-
 var toggleimage = document.getElementById('lightswitch');
 var toggletext = document.getElementById('toggletext');
 var controller = document.getElementById('controltext');
-
-toggleimage.addEventListener('click',imageToggle);
-
-function imageToggle(e){
-    if(toggleimage.getAttribute('src')=='includes/resources/img/light.png'){
-        toggleimage.src = 'includes/resources/img/dark.png';
-        toggletext.textContent = 'Dark mode';
-       // document.body.style.backgroundColor = 'black';
-       // document.body.style.color = 'white';
-    } else{
-        toggleimage.src = 'includes/resources/img/light.png';
-        toggletext.textContent = 'Light mode';
-        document.body.style.backgroundColor = 'white';
-        document.body.style.color = 'black';
-    }
-}
-//switch active class among navs
-
 let activenav = document.querySelectorAll('#navlink');
 let operations = document.querySelector('.operations-panel');
 let activepanel = document.querySelectorAll('#opanel');
+let menubtn = document.getElementById('dropdownMenu');
+let menu = document.getElementById('menu-part');
+let menupanel = document.querySelector('.menu-panel');
+let container = document.querySelector('.container');
+let coinname = firstCoin.children[1].firstElementChild.lastElementChild.firstElementChild;
+let eachcoin = document.querySelectorAll('#coinlist #allcoins .eachcoin');
+let eachcoin2 = document.querySelectorAll('#coinlist2 #allcoins .eachcoin');
+var screenSize = window.matchMedia("(max-width:600px)");
+let coininfo2 = document.querySelector('#selectcoin #coininfo');
+let coinimg = firstCoin.children[1].firstElementChild.firstElementChild.firstElementChild;
+let converted;
 
 for(let x = 0; x<activenav.length; x++){
     //add eventlistener
@@ -96,12 +56,76 @@ for(let x = 0; x<activenav.length; x++){
 }
 
 //populate menu;
-let menubtn = document.getElementById('dropdownMenu');
-let menu = document.getElementById('menu-part');
-let menupanel = document.querySelector('.menu-panel');
-let container = document.querySelector('.container');
+
+title.textContent = 'JunoSwap | Swap';
+coinchange.addEventListener("click", coinSwap);
+
+//swap the elements in the first coin to the second
+
+function coinSwap (){
+    let coinname2 = secondCoin.children[1].firstElementChild.lastElementChild.firstElementChild;
+
+    console.log();
+   // var temp = null;
+    let source = coinchange.getAttribute('src');
+
+     if(source == 'includes/resources/img/up-down.png'){
+            coinchange.src = 'includes/resources/img/down-up.png';
+            let  temp = firstCoin.innerHTML;
+            //firstCoin.innerHTML = document.getElementById('secondcoin').innerHTML;
+            firstCoin.insertBefore(selectcoin,firstCoin.children[0]);
+            firstCoin.insertBefore(coindropdown2,firstCoin.children[0]);
+            secondCoin.insertBefore(coinselect,secondCoin.children[0]);
+            secondCoin.insertBefore(coindropdown,secondCoin.children[0]);
+            
+
+            //temp = null;
+            
+        
+        } else{
+            coinchange.src = 'includes/resources/img/up-down.png';
+            //let  temp = secondCoin.innerHTML;
+            //secondCoin.innerHTML = document.getElementById('firstcoin').innerHTML;
+            //firstCoin.innerHTML = temp;
+            //temp = null;
+            secondCoin.insertBefore(selectcoin,secondCoin.children[0]);
+            secondCoin.insertBefore(coindropdown2,secondCoin.children[0]);
+            firstCoin.insertBefore(coinselect,firstCoin.children[0]);
+            firstCoin.insertBefore(coindropdown,firstCoin.children[0]);
+            
+        }
+
+        if(conversion.style.display == 'block'){
+          //  exchangeValue(coinname2);
+
+        }
+        console.log(coinname.textContent);
+        console.log(coinname2.textContent);
+       
+      
+};
+
+
+//lightmode and darkmode toggle
+
+toggleimage.addEventListener('click',imageToggle);
+
+function imageToggle(e){
+    if(toggleimage.getAttribute('src')=='includes/resources/img/light.png'){
+        toggleimage.src = 'includes/resources/img/dark.png';
+        toggletext.textContent = 'Dark mode';
+       // document.body.style.backgroundColor = 'black';
+       // document.body.style.color = 'white';
+    } else{
+        toggleimage.src = 'includes/resources/img/light.png';
+        toggletext.textContent = 'Light mode';
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
+    }
+}
+//switch active class among navs
+
 //check mediaquery
-var screenSize = window.matchMedia("(max-width:600px)");
 
 function screenssSize(x){
     
@@ -143,16 +167,7 @@ operations.parentNode.insertBefore(menu,operations);
 
 //dropdown of coinlist on swap page
 
-let swapvalue = document.getElementById('swapvalue');
-let coinvalue = document.getElementById('coinvalue');
-let coinselect = document.getElementById('coinselect');
-let selectcoin = document.getElementById('selectcoin');
 
-
-let coindropdown = document.getElementById('coinlist');
-let coindropdown2 = document.getElementById('coinlist2');
-let listclose = document.getElementById('listclose');
-let listclose2 = document.getElementById('listclose2');
 
 window.addEventListener('click',function(e){
    // console.log(e.target);
@@ -203,12 +218,10 @@ window.addEventListener('mouseup', function(e){
       //  closeit();
     }
 }) 
-let coinname = document.getElementById('coinname');
-let coinimg = document.getElementById('coinfo_img');
+
 //change the textcontent in firstcoin to select
 
-let eachcoin = document.querySelectorAll('#coinlist #allcoins .eachcoin');
-let eachcoin2 = document.querySelectorAll('#coinlist2 #allcoins .eachcoin');
+
 
 
 for(let x = 0;x<eachcoin.length;x++){
@@ -225,10 +238,10 @@ for(let x = 0;x<eachcoin.length;x++){
         coindropdown.style.display = 'none';
         coinselect.style.display ='flex';
         swapvalue.style.display = 'block';
-        let coinname2 = document.querySelector('#selectcoin #coininfo #nameandbalance #coinname');
+        let coinname2 = secondCoin.children[1].firstElementChild.lastElementChild.firstElementChild;
 
 
-        if(convert){
+        if(conversion.style.display == 'block'){
             exchangeValue(coinname2);
 
         }
@@ -236,7 +249,6 @@ for(let x = 0;x<eachcoin.length;x++){
         // console.log(coinname.textContent = eachcoin[x].children[1].firstElementChild.textContent);
     });     
 }
-let coininfo2 = document.querySelector('#selectcoin #coininfo');
 
 for(let x = 0;x<eachcoin2.length;x++){
     eachcoin2[x].addEventListener("click",function(e){
@@ -247,8 +259,8 @@ for(let x = 0;x<eachcoin2.length;x++){
         eachcoin2[x].id = 'active';
         convert();
        coininfo2.innerHTML = coinimg.parentElement.parentElement.innerHTML;
-       let coinimg2 = document.querySelector('#selectcoin #coininfo #coinfo_img');
-       let coinname2 = document.querySelector('#selectcoin #coininfo #nameandbalance #coinname');
+       let coinimg2 = secondCoin.children[1].firstElementChild.firstElementChild.firstElementChild;
+       let coinname2 = secondCoin.children[1].firstElementChild.lastElementChild.firstElementChild;
 
        coinimg2.src = eachcoin2[x].firstElementChild.firstElementChild.src;
        coinname2.textContent = eachcoin2[x].firstElementChild.lastElementChild.firstElementChild.textContent;
@@ -289,16 +301,17 @@ let coinrate = {
     'ngm': 0.680325,
     'comdex' : 0.8345,
     'eeur': 1,
-    'usdc': 1
+    'usdc': 1,
+    'luna': 2.4,
+    'ust': 1
 
 }
-let converted;
-var $firstcoinvalue = coinname.textContent.toLowerCase().trim();
 
 //exchange value
 function exchangeValue(coinname2){
     let twocoins = document.getElementById('coinconversion');
     var firstcoinvalue , secondcoinvalue;
+    var $firstcoinvalue = coinname.textContent.toLowerCase().trim();
     var $secondcoinvalue = coinname2.textContent.toLowerCase().trim();
     firstcoinvalue = coinrate[$firstcoinvalue];
     secondcoinvalue = coinrate[$secondcoinvalue];
@@ -317,6 +330,8 @@ function exchangeValue(coinname2){
 let conversion = document.getElementById('coinundex');
 function inputconverter(e){
     if(conversion.style.display == 'block'){
+        var $firstcoinvalue = coinname.textContent.toLowerCase().trim();
+
         var estimate = 'Swap estimate = $' + (swapinput.value * coinrate[$firstcoinvalue]).toFixed(2);
         dollarvalue.textContent = estimate; 
         if(swapinput.value * converted > 0) {
